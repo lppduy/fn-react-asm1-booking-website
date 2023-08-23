@@ -1,4 +1,4 @@
-import NavbarItem from './NavbarItem/NavbarItem';
+import NavbarItem from '../NavbarItem/NavbarItem';
 import './NavbarList.css';
 
 function NavbarItems() {
