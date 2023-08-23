@@ -1,0 +1,8 @@
+.navbarListContainer {
+  background-color: #003580;
+  color: white;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+  padding: 20px 20px 30px 190px;
+}
