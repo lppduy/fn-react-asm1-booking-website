@@ -10,8 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Header.css';
 import { DateRange } from 'react-date-range';
 import { useState } from 'react';
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+import 'react-date-range/dist/styles.css'; //
+import 'react-date-range/dist/theme/default.css'; //
 import { format } from 'date-fns';
 import { useNavigate } from 'react-router-dom';
 
@@ -44,13 +44,13 @@ function Header() {
   };
 
   const handleSearch = () => {
-    navigate('/hotels', { state: { destination, date, options } });
+    navigate('/search', { state: { destination, date, options } });
   };
   return (
     <div className="header">
       <div className="headerContainer">
         <h1 className="headerTitle">A lifetime of discounts? It's Genius.</h1>
-        <p className="headerDesc">
+        <p className="headerDescription">
           Get rewarded for your travels – unlock instant savings of 10% or more
           with a free account
         </p>
