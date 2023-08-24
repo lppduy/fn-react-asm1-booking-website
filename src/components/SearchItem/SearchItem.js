@@ -1,20 +1,21 @@
 import './SearchItem.css';
 
-const SearchItem = ({
-  name,
-  distance,
-  tag,
-  type,
-  description,
-  free_cancel,
-  price,
-  rate,
-  rate_text,
-  img_url,
-}) => {
+const SearchItem = ({ data }) => {
+  const {
+    name,
+    distance,
+    tag,
+    type,
+    description,
+    free_cancel,
+    price,
+    rate,
+    rate_text,
+    image_url,
+  } = data;
   return (
     <div className="searchItem">
-      <img src={img_url} alt="" className="siImg" />
+      <img src={image_url} alt={name} className="siImg" />
       <div className="siDesc">
         <h1 className="siTitle">{name}</h1>
         <span className="siDistance">{distance} from center</span>

@@ -5,11 +5,8 @@ import './Search.css';
 // import SearchList from '../../components/SearchList/SearchList';
 // import SearchPopup from '../../components/SearchPopup/SearchPopup';
 
-import { format } from 'date-fns';
-import { useState } from 'react';
-import { DateRange } from 'react-date-range';
-import { useLocation } from 'react-router-dom';
-import SearchItem from '../../components/SearchItem/SearchItem';
+import SearchList from '../../components/SearchList/SearchList';
+import SearchPopup from '../../components/SearchPopup/SearchPopup';
 // import SearchItem from '../../components/searchItem/SearchItem';
 
 const Search = () => {
@@ -52,92 +49,24 @@ const Search = () => {
     },
   ];
 
-  const location = useLocation();
-  const [destination, setDestination] = useState(location.state.destination);
-  const [date, setDate] = useState(location.state.date);
-  const [openDate, setOpenDate] = useState(false);
-  const [options, setOptions] = useState(location.state.options);
   return (
     <div>
       <Navbar />
-      <div className="search-container">
-        <div className="search-wrapper">
-          {/* SEARCH POPUP COMPONENT */}
-          <div className="search-popup">
-            <h1 className="search-popup__title">Search</h1>
-            <div className="search-popup__item">
-              <label>Destination</label>
-              <input placeholder={destination} type="text" />
+      <div className="page-container">
+        <div className="search-container">
+          <div className="search-wrapper">
+            <div className="search-popup">
+              <h1 className="search-popup__title">Search</h1>
+              <SearchPopup />
+              <button>Search</button>
             </div>
-            <div className="search-popup__item">
-              <label>Check-in Date</label>
-              <span onClick={() => setOpenDate(!openDate)}>{`${format(
-                date[0].startDate,
-                'MM/dd/yyyy'
-              )} to ${format(date[0].endDate, 'MM/dd/yyyy')}`}</span>
-              {openDate && (
-                <DateRange
-                  onChange={item => setDate([item.selection])}
-                  minDate={new Date()}
-                  ranges={date}
-                />
-              )}
+            <div className="search-list">
+              <SearchList searchData={searchData} />
             </div>
-            <div className="search-popup__item">
-              <label>Options</label>
-              <div className="lsOptions">
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">
-                    Min price <small>per night</small>
-                  </span>
-                  <input type="number" className="lsOptionInput" />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">
-                    Max price <small>per night</small>
-                  </span>
-                  <input type="number" className="lsOptionInput" />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Adult</span>
-                  <input
-                    type="number"
-                    min={1}
-                    className="lsOptionInput"
-                    placeholder={options.adult}
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Children</span>
-                  <input
-                    type="number"
-                    min={0}
-                    className="lsOptionInput"
-                    placeholder={options.children}
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Room</span>
-                  <input
-                    type="number"
-                    min={1}
-                    className="lsOptionInput"
-                    placeholder={options.room}
-                  />
-                </div>
-              </div>
-            </div>
-            <button>Search</button>
-          </div>
-          {/* SEARCH LIST COMPONENT */}
-          <div className="search-list">
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
