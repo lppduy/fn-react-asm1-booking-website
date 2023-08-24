@@ -8,7 +8,7 @@ const HotelItem = props => {
     <div className="hotel-item">
       <img src={image_url} alt={name} className="hotel-image" />
       <span className="hotel-name">
-        <a href="./hotels/0" target="_blank">
+        <a href="./detail/" target="_blank">
           {name}
         </a>
       </span>
