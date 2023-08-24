@@ -1,6 +1,7 @@
 import Header from '../../components/Header/Header';
 import Homepage from '../../components/Hompage/Homepage';
 import Navbar from '../../components/Navbar/Navbar';
+import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import './Home.css';
 
 const Home = () => {
@@ -11,7 +12,8 @@ const Home = () => {
 
       <div className="home-container">
         <Homepage />
-        {/* <MailList /> */}
+        <RegisterForm />
+
         {/* <Footer /> */}
       </div>
     </div>
