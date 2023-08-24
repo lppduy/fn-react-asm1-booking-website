@@ -1,3 +1,4 @@
+import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Homepage from '../../components/Hompage/Homepage';
 import Navbar from '../../components/Navbar/Navbar';
@@ -9,12 +10,10 @@ const Home = () => {
     <div>
       <Navbar />
       <Header />
-
       <div className="home-container">
         <Homepage />
         <RegisterForm />
-
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
