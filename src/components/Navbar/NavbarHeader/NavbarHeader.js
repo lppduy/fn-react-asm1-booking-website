@@ -2,12 +2,12 @@ import './NavbarHeader.css';
 
 function NavbarHeader() {
   return (
-    <div className="navbarHeader">
-      <div className="navbarHeaderContainer">
-        <span className="navBrand">Booking Website</span>
-        <div className="navbarHeaderItems">
-          <button className="navbarHeaderBtn">Register</button>
-          <button className="navbarHeaderBtn">Login</button>
+    <div className="navbar-header">
+      <div className="navbar-header__container">
+        <span className="navbrand">Booking Website</span>
+        <div className="navbar-header__items">
+          <button className="navbar-header__btn">Register</button>
+          <button className="navbar-header__btn">Login</button>
         </div>
       </div>
     </div>

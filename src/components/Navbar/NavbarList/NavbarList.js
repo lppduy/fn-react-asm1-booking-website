@@ -31,7 +31,7 @@ function NavbarItems() {
   ];
 
   return (
-    <div className="navbarListContainer">
+    <div className="navbar-list__container">
       {navbarData.map(data => (
         <NavbarItem type={data.type} active={data.active} icon={data.icon} />
       ))}

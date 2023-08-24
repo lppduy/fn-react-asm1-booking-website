@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './NavbarItem.css';
 
 function NavbarItem({ type, icon, active }) {
-  const itemClass = active ? 'navbarItem active' : 'navbarItem';
+  // const itemClass = active ? 'navbar-item active' : 'navbar-item';
   let iconData;
   switch (icon) {
     case 'fa-bed':
@@ -29,7 +29,7 @@ function NavbarItem({ type, icon, active }) {
       break;
   }
   return (
-    <div className={itemClass}>
+    <div className={`navbar-item ${active ? 'active' : ''}`}>
       <FontAwesomeIcon icon={iconData} />
       <span>{type}</span>
     </div>

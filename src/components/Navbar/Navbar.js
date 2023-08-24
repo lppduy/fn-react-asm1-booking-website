@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <NavbarHeader />
-      <div className="navbarList">
+      <div className="navbar-list">
         <NavbarList />
       </div>
     </div>

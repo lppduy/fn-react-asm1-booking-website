@@ -1,10 +1,10 @@
-.navbarHeader {
+.navbar-header {
   height: 60px;
   background-color: #003580;
   display: flex;
   justify-content: center;
 }
-.navbarHeaderContainer {
+.navbar-header__container {
   width: 100%;
   max-width: 1024px;
   color: white;
@@ -13,11 +13,11 @@
   justify-content: space-between;
 }
 
-.navBrand {
+.navbrand {
   font-weight: 500;
 }
 
-.navbarHeaderBtn {
+.navbar-header__btn {
   margin-left: 20px;
   border: none;
   padding: 5px 10px;

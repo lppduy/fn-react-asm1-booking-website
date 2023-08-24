@@ -1,7 +1,7 @@
-.navbarListContainer {
+.navbar-list__container {
   background-color: #003580;
   color: white;
   display: flex;
   gap: 40px;
-  padding: 20px 20px 30px 190px;
+  padding: 10px 20px 30px 210px;
 }
