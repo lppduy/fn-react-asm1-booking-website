@@ -48,28 +48,28 @@ function Header() {
   };
   return (
     <div className="header">
-      <div className="headerContainer">
-        <h1 className="headerTitle">A lifetime of discounts? It's Genius.</h1>
-        <p className="headerDescription">
+      <div className="header-container">
+        <h1 className="header-title">A lifetime of discounts? It's Genius.</h1>
+        <p className="header-description">
           Get rewarded for your travels – unlock instant savings of 10% or more
           with a free account
         </p>
-        <button className="headerBtn">Sign in / Register</button>
-        <div className="headerSearch">
-          <div className="headerSearchItem">
-            <FontAwesomeIcon icon={faBed} className="headerIcon" />
+        <button className="header-btn">Sign in / Register</button>
+        <div className="header-search">
+          <div className="header-search__item">
+            <FontAwesomeIcon icon={faBed} className="header-icon" />
             <input
               type="text"
               placeholder="Where are you going?"
-              className="headerSearchInput"
+              className="header-search__input"
               onChange={e => setDestination(e.target.value)}
             />
           </div>
-          <div className="headerSearchItem">
-            <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+          <div className="header-search__item">
+            <FontAwesomeIcon icon={faCalendarDays} className="header-icon" />
             <span
               onClick={() => setOpenDate(!openDate)}
-              className="headerSearchText"
+              className="header-search__text"
             >{`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(
               date[0].endDate,
               'MM/dd/yyyy'
@@ -85,67 +85,71 @@ function Header() {
               />
             )}
           </div>
-          <div className="headerSearchItem">
-            <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+          <div className="header-search__item">
+            <FontAwesomeIcon icon={faPerson} className="header-icon" />
             <span
               onClick={() => setOpenOptions(!openOptions)}
-              className="headerSearchText"
+              className="header-search__text"
             >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
             {openOptions && (
               <div className="options">
-                <div className="optionItem">
-                  <span className="optionText">Adult</span>
-                  <div className="optionCounter">
+                <div className="option__item">
+                  <span className="option-text">Adult</span>
+                  <div className="option-counter">
                     <button
                       disabled={options.adult <= 1}
-                      className="optionCounterButton"
+                      className="option-counter__btn"
                       onClick={() => handleOption('adult', 'd')}
                     >
                       -
                     </button>
-                    <span className="optionCounterNumber">{options.adult}</span>
+                    <span className="option-counter__number">
+                      {options.adult}
+                    </span>
                     <button
-                      className="optionCounterButton"
+                      className="option-counter__btn"
                       onClick={() => handleOption('adult', 'i')}
                     >
                       +
                     </button>
                   </div>
                 </div>
-                <div className="optionItem">
-                  <span className="optionText">Children</span>
-                  <div className="optionCounter">
+                <div className="option__item">
+                  <span className="option-text">Children</span>
+                  <div className="option-counter">
                     <button
                       disabled={options.children <= 0}
-                      className="optionCounterButton"
+                      className="option-counter__btn"
                       onClick={() => handleOption('children', 'd')}
                     >
                       -
                     </button>
-                    <span className="optionCounterNumber">
+                    <span className="option-counter__number">
                       {options.children}
                     </span>
                     <button
-                      className="optionCounterButton"
+                      className="option-counter__btn"
                       onClick={() => handleOption('children', 'i')}
                     >
                       +
                     </button>
                   </div>
                 </div>
-                <div className="optionItem">
-                  <span className="optionText">Room</span>
-                  <div className="optionCounter">
+                <div className="option__item">
+                  <span className="option-text">Room</span>
+                  <div className="option-counter">
                     <button
                       disabled={options.room <= 1}
-                      className="optionCounterButton"
+                      className="option-counter__btn"
                       onClick={() => handleOption('room', 'd')}
                     >
                       -
                     </button>
-                    <span className="optionCounterNumber">{options.room}</span>
+                    <span className="option-counter__number">
+                      {options.room}
+                    </span>
                     <button
-                      className="optionCounterButton"
+                      className="option-counter__btn"
                       onClick={() => handleOption('room', 'i')}
                     >
                       +
@@ -155,8 +159,8 @@ function Header() {
               </div>
             )}
           </div>
-          <div className="headerSearchItem">
-            <button className="headerBtn" onClick={handleSearch}>
+          <div className="header-search__item">
+            <button className="header-btn" onClick={handleSearch}>
               Search
             </button>
           </div>
