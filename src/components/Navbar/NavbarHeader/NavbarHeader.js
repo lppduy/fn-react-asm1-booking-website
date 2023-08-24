@@ -4,7 +4,7 @@ function NavbarHeader() {
   return (
     <div className="navbarHeader">
       <div className="navbarHeaderContainer">
-        <span className="logo">Booking Website</span>
+        <span className="navBrand">Booking Website</span>
         <div className="navbarHeaderItems">
           <button className="navbarHeaderBtn">Register</button>
           <button className="navbarHeaderBtn">Login</button>

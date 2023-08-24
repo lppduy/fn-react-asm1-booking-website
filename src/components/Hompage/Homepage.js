@@ -1,13 +1,15 @@
+import CityList from './CityList/CityList';
 import './Homepage.css';
 
 function Homepage() {
   return (
     <>
-      {/* <Featured /> */}
+      {/* <Featured /> -> <CityList /> */}
+      <CityList />
       <h1 className="homepageTitle">Browse by property type</h1>
-      {/* <PropertyList /> */}
+      {/* <PropertyList />   */}
       <h1 className="homepageTitle">Homes guests love</h1>
-      {/* <FeaturedProperties /> */}
+      {/* <FeaturedProperties /> -> <HotelList */}
     </>
   );
 }
