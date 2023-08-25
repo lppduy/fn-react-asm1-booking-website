@@ -16,8 +16,15 @@ import { format } from 'date-fns';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  // Khởi tạo các state và các hàm xử lý sự kiện cho thành phần tìm kiếm khách sạn
+
+  // State lưu trữ đích đến (destination) được khởi tạo ban đầu là chuỗi rỗng.
   const [destination, setDestination] = useState('');
+
+  // State xác định xem DatePicker có nên hiển thị hay không, ban đầu là false (ẩn).
   const [openDate, setOpenDate] = useState(false);
+
+  // State lưu trữ thông tin khoảng thời gian được chọn, ban đầu là ngày hiện tại.
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -25,15 +32,21 @@ function Header() {
       key: 'selection',
     },
   ]);
+
+  // State xác định xem bảng điều khiển lựa chọn số lượng người và phòng có nên hiển thị hay không, ban đầu là false (ẩn).
   const [openOptions, setOpenOptions] = useState(false);
+
+  // State lưu trữ thông tin về số lượng người (adult), trẻ em (children), và số phòng (room), giá trị ban đầu là 1 adult, 0 children, và 1 room.
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
     room: 1,
   });
 
+  // Hook 'useNavigate' từ React Router được sử dụng để thực hiện chuyển hướng trong ứng dụng.
   const navigate = useNavigate();
 
+  // Hàm xử lý thay đổi số lượng người, trẻ em, hoặc phòng dựa trên tên (name) và thao tác (operation).
   const handleOption = (name, operation) => {
     setOptions(prev => {
       return {
@@ -43,9 +56,12 @@ function Header() {
     });
   };
 
+  // Hàm xử lý sự kiện khi người dùng nhấn nút "Search".
+  // Nó thực hiện chuyển hướng đến trang "/search" và truyền thông tin về đích đến, khoảng thời gian, và số lượng người/phòng.
   const handleSearch = () => {
     navigate('/search', { state: { destination, date, options } });
   };
+
   return (
     <div className="header">
       <div className="header-container">
@@ -56,6 +72,7 @@ function Header() {
         </p>
         <button className="header-btn">Sign in / Register</button>
         <div className="header-search">
+          {/* Phần tìm kiếm địa điểm */}
           <div className="header-search__item">
             <FontAwesomeIcon icon={faBed} className="header-icon" />
             <input
@@ -65,6 +82,7 @@ function Header() {
               onChange={e => setDestination(e.target.value)}
             />
           </div>
+          {/* Phần lựa chọn khoảng thời gian */}
           <div className="header-search__item">
             <FontAwesomeIcon icon={faCalendarDays} className="header-icon" />
             <span
@@ -85,12 +103,14 @@ function Header() {
               />
             )}
           </div>
+          {/* Phần lựa chọn số lượng người và phòng */}
           <div className="header-search__item">
             <FontAwesomeIcon icon={faPerson} className="header-icon" />
             <span
               onClick={() => setOpenOptions(!openOptions)}
               className="header-search__text"
             >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+            {/* Dropdown menu hiển thị khi openOptions là true */}
             {openOptions && (
               <div className="options">
                 <div className="option__item">
