@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-// './images/hotel_search_3.jpg'
+
 const Detail = () => {
   const detailData = {
     name: 'Tower Street Apartments',
@@ -25,6 +25,7 @@ const Detail = () => {
     nine_night_price: 955,
   };
 
+  // Tạo ra 1 mảng riêng chứa src hình ảnh từ data
   const photos = [...detailData.photos];
   // console.log(photos);
 

@@ -2,12 +2,9 @@ import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
 import './Search.css';
-// import SearchList from '../../components/SearchList/SearchList';
-// import SearchPopup from '../../components/SearchPopup/SearchPopup';
 
 import SearchList from '../../components/SearchList/SearchList';
 import SearchPopup from '../../components/SearchPopup/SearchPopup';
-// import SearchItem from '../../components/searchItem/SearchItem';
 
 const Search = () => {
   const searchData = [

@@ -12,6 +12,7 @@ import './NavbarItem.css';
 function NavbarItem({ type, icon, active }) {
   // const itemClass = active ? 'navbar-item active' : 'navbar-item';
   let iconData;
+  // Dựa vào giá trị của biến 'icon', chọn biểu tượng FontAwesome tương ứng
   switch (icon) {
     case 'fa-bed':
       iconData = faBed;

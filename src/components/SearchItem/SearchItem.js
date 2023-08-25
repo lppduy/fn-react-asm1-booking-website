@@ -22,7 +22,7 @@ const SearchItem = ({ data }) => {
         <span className="siTaxiOp">{tag}</span>
         <span className="siSubtitle">{description}</span>
         <span className="siFeatures">{type}</span>
-        {/* If can cancel */}
+        {/* Nếu có thể cancel */}
         {free_cancel ? (
           <div>
             <span className="siCancelOp">Free cancellation </span>
